@@ -1,0 +1,102 @@
+.streak-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+}
+
+.streak-display:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.streak-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.streak-emoji {
+  font-size: 3rem;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.streak-info {
+  flex: 1;
+}
+
+.streak-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+  opacity: 0.9;
+}
+
+.streak-count {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.streak-message {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.streak-progress {
+  margin-bottom: 12px;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: rgba(255,255,255,0.8);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.streak-last-entry {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* Streak Color Variants */
+.streak-gold {
+  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+}
+
+.streak-purple {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.streak-blue {
+  background: linear-gradient(135deg, #2196F3 0%, #21CBF3 100%);
+}
+
+.streak-green {
+  background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+}
+
+.streak-default {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
