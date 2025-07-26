@@ -31,7 +31,6 @@ ChartJS.register(
 );
 
 function PersonalAnalytics() {
-  const [user, setUser] = useState(null);
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,9 +46,7 @@ function PersonalAnalytics() {
       }
 
       try {
-        const tokenPayload = jwtDecode(token);
-        const username = tokenPayload.email?.split('@')[0] || 'User';
-        setUser({ username });
+        jwtDecode(token); // Just validate the token, don't need to store user data
         return true;
       } catch (error) {
         console.error('Token decode error:', error);

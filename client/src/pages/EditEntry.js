@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './EditEntry.css';
@@ -19,11 +19,7 @@ function EditEntry() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [toast, setToast] = useState(null);
 
-  useEffect(() => {
-    fetchEntry();
-  }, []);
-
-  const fetchEntry = async () => {
+  const fetchEntry = useCallback(async () => {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.get(`https://ecotrack19.onrender.com/api/entries/${id}`, {
@@ -36,7 +32,11 @@ function EditEntry() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchEntry();
+  }, [fetchEntry]);
 
   const showToast = (message, type = 'info') => {
     setToast({ message, type });

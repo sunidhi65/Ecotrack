@@ -14,7 +14,9 @@ function EntriesPage() {
       if (!token) return navigate('/login');
 
       try {
-        const decoded = jwtDecode(token); // Optional: Use decoded info if needed
+        // Validate token by decoding it
+        jwtDecode(token);
+        
         const res = await axios.get('https://ecotrack19.onrender.com/api/entries', {
           headers: { Authorization: `Bearer ${token}` },
         });
