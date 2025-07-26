@@ -20,7 +20,10 @@ const profileRoutes = require('./routes/profile');
 const analyticsRoutes = require('./routes/analytics');
 const leaderboardRoutes = require('./routes/leaderboard');
 const suggestionRoutes = require('./routes/suggestions');
+const dashboardRoutes = require('./routes/dashboard');
 
+
+app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/entries', entryRoutes);
 app.use('/api/profile', profileRoutes);
