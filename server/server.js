@@ -51,7 +51,7 @@ app.use((req, res) => {
 // MongoDB connection and server start
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ecotrack';
+    const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://sunidhi:Sunidhi13591@cluster0.sis4et8.mongodb.net/ecotrack';
     await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
