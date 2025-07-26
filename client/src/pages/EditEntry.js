@@ -26,7 +26,7 @@ function EditEntry() {
   const fetchEntry = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`http://localhost:5000/api/entries/${id}`, {
+      const res = await axios.get(`https://ecotrack19.onrender.com/api/entries/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setFormData(res.data);
@@ -51,7 +51,7 @@ function EditEntry() {
     setSaving(true);
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/entries/${id}`, formData, {
+      await axios.put(`https://ecotrack19.onrender.com/api/entries/${id}`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       showToast('✅ Entry updated successfully!', 'success');

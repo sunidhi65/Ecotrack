@@ -109,7 +109,7 @@ const LeaderboardWidget = ({ userStats, smoothNavigate, userId }) => {
   const [userRank, setUserRank] = useState(null);
   const [userPoints, setUserPoints] = useState(0);
 
-  const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://ecotrack19.onrender.com/api';
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
@@ -298,7 +298,7 @@ function Dashboard() {
     }
 
     try {
-      const res = await axios.get('http://localhost:5000/api/profile', {
+      const res = await axios.get('https://ecotrack19.onrender.com/api/profile', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser({
@@ -316,7 +316,7 @@ function Dashboard() {
   const fetchDashboardData = useCallback(async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/entries', {
+      const response = await axios.get('https://ecotrack19.onrender.com/api/entries', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -452,7 +452,7 @@ function Dashboard() {
     
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/entries/${id}`, {
+      await axios.delete(`https://ecotrack19.onrender.com/api/entries/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEntries(prevEntries => prevEntries.filter(entry => entry._id !== id));

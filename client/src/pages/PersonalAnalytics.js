@@ -64,7 +64,7 @@ function PersonalAnalytics() {
 
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/entries', {
+        const response = await axios.get('https://ecotrack19.onrender.com/api/entries', {
           headers: { Authorization: `Bearer ${token}` },
         });
 

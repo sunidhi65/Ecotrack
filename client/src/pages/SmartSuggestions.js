@@ -19,7 +19,7 @@ function SmartSuggestions() {
 
       try {
         console.log("📡 Fetching suggestions for user:", userId);
-        const res = await axios.get(`http://localhost:5000/api/suggestions/${userId}`, {
+        const res = await axios.get(`https://ecotrack19.onrender.com/api/suggestions/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

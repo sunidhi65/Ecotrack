@@ -9,7 +9,7 @@ const useStreak = () => {
     try {
       setLoading(true);
       // Replace with your actual API endpoint
-      const response = await fetch('/api/streak');
+      const response = await fetch('https://ecotrack19.onrender.com/api/streak');
       if (response.ok) {
         const data = await response.json();
         setStreak(data);

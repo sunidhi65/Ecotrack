@@ -21,7 +21,7 @@ function Profile() {
   const fetchProfile = async () => {
     const token = localStorage.getItem('token');
     try {
-      const res = await axios.get('http://localhost:5000/api/profile', {
+      const res = await axios.get('https://ecotrack19.onrender.com/api/profile', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProfile(res.data);
@@ -52,13 +52,13 @@ function Profile() {
     const token = localStorage.getItem('token');
     try {
       // Update general profile fields
-      await axios.put('http://localhost:5000/api/profile', profile, {
+      await axios.put('https://ecotrack19.onrender.com/api/profile', profile, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       // Update goal separately
       await axios.put(
-        'http://localhost:5000/api/profile/goal',
+        'https://ecotrack19.onrender.com/api/profile/goal',
         {
           goal: profile.goal,
           goalType: profile.goalType,
@@ -70,7 +70,7 @@ function Profile() {
 
       // Update username or password
       await axios.put(
-        'http://localhost:5000/api/profile/update',
+        'https://ecotrack19.onrender.com/api/profile/update',
         {
           username,
           currentPassword,

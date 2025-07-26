@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api', // Update if your backend runs elsewhere
+  baseURL: 'https://ecotrack19.onrender.com/api', // Update if your backend runs elsewhere
   withCredentials: true, // Ensures cookies are sent with requests (for token/session auth)
 });
 

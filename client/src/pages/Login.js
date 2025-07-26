@@ -18,7 +18,7 @@ function Login() {
     setLoading(true);
     
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
+      const res = await axios.post('https://ecotrack19.onrender.com/api/auth/login', form);
 
       // Store token
       const token = res.data.token;
