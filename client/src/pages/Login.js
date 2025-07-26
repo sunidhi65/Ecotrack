@@ -20,23 +20,23 @@ function Login() {
     try {
       const res = await axios.post('https://ecotrack19.onrender.com/api/auth/login', form);
 
-      // Store token
+      // Store token and user data
       const token = res.data.token;
+      const user = res.data.user;
+      
       localStorage.setItem('token', token);
-
-      // Decode token to get userId
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      const userId = payload.userId;
-
-      // Save userId to localStorage
-      localStorage.setItem('userId', userId);
-      console.log("✅ Login successful. Stored userId:", userId);
+      localStorage.setItem('userId', user.id);
+      localStorage.setItem('user', JSON.stringify(user));
+      
+      // Trigger auth state update
+      window.dispatchEvent(new Event('tokenChanged'));
+      
+      console.log("✅ Login successful. Stored userId:", user.id);
 
       setMessage('Login successful! Redirecting...');
       
-      setTimeout(() => {
-        navigate('/dashboard');
-      }, 1000);
+      // Navigate immediately without delay
+      navigate('/dashboard');
       
     } catch (err) {
       console.error('Login failed:', err.response || err.message);
