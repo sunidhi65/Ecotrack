@@ -10,7 +10,7 @@ const EcoTrackLeaderboard = () => {
   const [activeTab, setActiveTab] = useState('weekly');
   const navigate = useNavigate();
 
-  const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://ecotrack19.onrender.com/api';
+  const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://ecotrack19.onrender.com/api/leaderboard';
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
